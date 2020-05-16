@@ -1,0 +1,32 @@
+@using ChefsNDishes.Models;
+<h1><a href="/">Chefs</a> | <a href="dishes">Dishes</a></h1>
+
+<a href="dishes/new">Add a Dish</a>
+<hr>
+
+<h1>Yum, take a look at our tasty dishes!</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Chef</th>
+                    <th>Tastiness</th>
+                    <th>Calories</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                    @foreach(Dish dish in @ViewBag.Dishes)
+                    {
+                    <tr>
+                        <td>@dish.Name</td>
+                        <td>@dish.Creator.FirstName @dish.Creator.LastName</td>
+                        <td>@dish.Tastiness</td>
+                        <td>@dish.Calories</td>
+                        <td>@dish.Description</td>
+                    </tr>
+                    }
+            </tbody>
+        </table>
